@@ -1,0 +1,84 @@
+<html>
+<title>play9you</title>
+<style>
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+</style>
+<script>
+var count = 0;
+var x = 0;
+var y = 0;
+  function change1(){
+      document.getElementById("1").style.display = "none";
+      document.getElementById("2").style.display = "block";
+	  document.getElementById("3").style.display = "none";
+	  count += 1;
+  }
+    function change2(){
+      document.getElementById("1").style.display = "none";
+      document.getElementById("2").style.display = "none";
+	  document.getElementById("3").style.display = "block";
+	  count += 1;
+  }
+    function change3(){
+      document.getElementById("1").style.display = "block";
+      document.getElementById("2").style.display = "none";
+	  document.getElementById("3").style.display = "none";
+	  count += 1;
+	  if (count > 11){
+	  if (confirm("禁唔到?想唔想直接贏?")) {
+      txt = "恭喜,獎你玩多次,玩唔玩?";
+	  if(confirm(txt)){
+	  count = 0;
+	  }else{
+	  do{
+	    if(confirm("玩多次啦")){
+		  count = 0;
+          y = 0;		
+          x +=6;		  
+		}else{
+		x +=1;
+		y = 1;
+		}
+		} while (x <= 4);
+		x = 0;
+		if (y = 1){
+		alert("好,你走");
+		window.close();
+		}
+		
+		
+      }   
+	  }else{
+	   alert("感你繼續玩");
+	   count = 0;
+	   x = 0;
+	   y = 0;
+	  }
+  }
+  }
+</script>
+<body>
+<h1>If you can click on the button, you will get a special gift!!</h1>
+<div align="left">
+<input class="button" id="1" type="button"  value="i am here" onmouseenter="change1()"/><p>
+</div>
+
+<div align="center">
+<input class="button" id="2" type="button"  value="i am here" onmouseenter="change2()"style="display:none"/><p>
+</div>
+
+<div align="right">
+<input class="button" id="3" type="button"  value="i am here"onmouseenter="change3()"style="display:none"/>
+</div>
+
+</body>
+</html>
